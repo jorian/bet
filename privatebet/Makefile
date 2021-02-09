@@ -24,7 +24,7 @@ clean:
 
 
 $(PROJNAME): $(OBJFILES)
-	        $(CC) $(CFLAGS) -o $@ bet.c $^ ../ccan/obj/*.o ../crypto777/libcrypto777.a -Wl,-rpath=$(HOME)/$(LIGHTNING)/external -L$(HOME)/$(LIGHTNING)/external -Wl,-rpath=$(PWD)/privatebet/external -L$(PWD)/privatebet/external  -lcurl -ldl -lnng -lbacktrace -lpthread -lm -lcli -lwallycore -lsecp256k1 -lsodium -ljsmn -lbase58 -lbacktrace -L/usr/local/lib -lm -lgmp -lsqlite3 -L/usr/local/lib -lboost_system -lboost_filesystem -lboost_program_options -lboost_thread -lboost_chrono -lssl -lcrypto -levent -lpthread -lstdc++  -lwebsockets
+	        $(CC) $(CFLAGS) -o $@ bet.c $^ ../ccan/obj/*.o ../crypto777/libcrypto777.a -Wl,-rpath=$(HOME)/$(LIGHTNING)/external -L$(HOME)/$(LIGHTNING)/external -Wl,-rpath=$(PWD)/external -L$(PWD)/external  -lcurl -ldl -lnng -lbacktrace -lpthread -lm -lcli -lwallycore -lsecp256k1 -lsodium -ljsmn -lbase58 -lbacktrace -L/usr/local/lib -lm -lgmp -lsqlite3 -L/usr/local/lib -lboost_system -lboost_filesystem -lboost_program_options -lboost_thread -lboost_chrono -lssl -lcrypto -levent -lpthread -lstdc++  -lwebsockets
 	cp $(PROJNAME) $(CASHIER)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@  -I ../includes/curl
